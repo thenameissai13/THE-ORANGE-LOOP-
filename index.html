@@ -10,11 +10,12 @@ a{text-decoration:none}
 .hero{padding:80px 20px;background:#111}
 .hero h1{letter-spacing:6px;color:#ff6a00}
 .btn{padding:14px 28px;background:#ff6a00;color:black;border-radius:30px;font-weight:bold;display:inline-block;margin:10px}
+.card{max-width:700px;margin:30px auto;padding:20px;background:#151515;border-radius:16px;border:1px solid #333;text-align:center}
 </style>
 </head>
 <body>
 
-<nav style="position:sticky;top:0;z-index:999;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid #222">
+<nav style="position:sticky;top:0;z-index:999;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #222">
 <div style="font-weight:bold;letter-spacing:3px;color:#ff6a00">ORANGE LOOP</div>
 <div style="display:flex;gap:15px;font-size:13px;align-items:center">
 <a href="index.html" style="color:white;border-bottom:2px solid #ff6a00;padding-bottom:3px">FILM</a>
@@ -29,12 +30,39 @@ a{text-decoration:none}
 <p style="opacity:0.6">A mind-bending short film by Sai</p>
 <div style="max-width:700px;margin:30px auto">
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid #333">
-<iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/rfX_Ivgr7fQ" frameborder="0" allowfullscreen></iframe>
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/rX_Ivgr77Q" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 <a class="btn" href="story.html">HOW IT WAS BUILT →</a>
 <a class="btn" href="comic.html" style="background:transparent;border:1px solid #ff6a00;color:#ff6a00">READ COMIC</a>
 </div>
+
+<!-- NEW: COMIC PREVIEW UNDER HEADING ON HOME PAGE -->
+<div class="card" style="border:2px solid #ff6a00;max-width:800px">
+<h2 style="color:#ff6a00;letter-spacing:3px;margin:0">COMIC PREVIEW</h2>
+<p style="color:#888;font-size:11px;letter-spacing:2px;margin-top:6px">2-PAGE SAMPLE • UNLOCK AFTER BREAKING LOOP</p>
+
+<div id="locked" style="background:#000;height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:12px;margin-top:18px;border:1px dashed #333">
+<p style="color:#666;margin:0">🔒 Locked - Break loop in comic page</p>
+<a href="comic.html" style="margin-top:12px;padding:10px 20px;background:#ff6a00;color:black;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px">BREAK LOOP →</a>
+</div>
+
+<div id="unlocked" style="display:none">
+<div style="background:white;border-radius:12px;overflow:hidden;margin-top:18px">
+<iframe src="sample.pdf#toolbar=0" style="width:100%;height:650px;border:none"></iframe>
+</div>
+<p style="color:#aaa;font-size:12px;margin-top:12px">Full 40 pages + behind scenes for ₹29</p>
+<a href="comic.html" style="display:inline-block;margin-top:8px;padding:14px 28px;background:#00ff88;color:black;border-radius:30px;font-weight:900;text-decoration:none">PAY ₹29 - UPI: 7620604930-s363@ybl</a>
+</div>
+</div>
+
+<script>
+// Show preview if user already passed quiz
+if(localStorage.getItem('loopUnlocked')==='yes'){
+ document.getElementById('locked').style.display='none';
+ document.getElementById('unlocked').style.display='block';
+}
+</script>
 
 </body>
 </html>
