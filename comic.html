@@ -117,14 +117,53 @@ nav a{text-decoration:none}
 </div>
 
 <script>
-var v=document.getElementById('bgVideo');function play(){v.play().catch(()=>{})}play();setInterval(play,800);
+var v=document.getElementById('bgVideo');
+function play(){ if(v) v.play().catch(()=>{}); }
+play();
+setInterval(play,1000);
+document.addEventListener('click', play);
+document.addEventListener('touchstart', play);
+
 function checkQuiz(){
-let a1=document.querySelector('input[name="q1"]:checked'),a2=document.querySelector('input[name="q2"]:checked'),a3=document.querySelector('input[name="q3"]:checked'),r=document.getElementById('result');
-if(!a1||!a2||!a3){r.innerText="Answer all 3!";r.style.color="#ff6a00";return}
-if(a1.value=="orange"&&a2.value=="car"&&a3.value=="ignore"){
-let c="LOOP-"+Math.floor(1000+Math.random()*9000);
-document.getElementById('prizeCode').innerText=c;
-document.getElementById('hiddenCode').value=c;
-// UNLOCK
-document.getElementById('payCard').classList.remove('locked');
-document.getElementById('previewCard').classList.remove('locked');
+  console.log("clicked");
+  var a1=document.querySelector('input[name="q1"]:checked');
+  var a2=document.querySelector('input[name="q2"]:checked');
+  var a3=document.querySelector('input[name="q3"]:checked');
+  var r=document.getElementById('result');
+  
+  if(!a1||!a2||!a3){
+    r.innerText="⚠️ Select all 3 answers!";
+    r.style.color="#ff6a00";
+    alert("Select all 3!");
+    return;
+  }
+  
+  // Correct answers: orange, car, ignore
+  if(a1.value=="orange" && a2.value=="car" && a3.value=="ignore"){
+    var c="LOOP-"+Math.floor(1000+Math.random()*9000);
+    document.getElementById('prizeCode').innerText=c;
+    document.getElementById('hiddenCode').value=c;
+    localStorage.setItem('loopCode', c);
+    
+    // UNLOCK
+    document.getElementById('payCard').classList.remove('locked');
+    document.getElementById('previewCard').classList.remove('locked');
+    document.getElementById('payContent').style.display="block";
+    var realPrev=document.getElementById('realPreview');
+    if(realPrev) realPrev.style.display="block";
+    document.getElementById('lockIcon').innerText="🔓";
+    var desc=document.getElementById('payDesc');
+    desc.innerText="✅ Quiz passed! Pay ₹29 to get shortlisted";
+    desc.style.color="#00ff88";
+    document.getElementById('quizCard').style.display="none";
+    
+    alert("Correct! Form unlocked below 👇");
+    document.getElementById('payCard').scrollIntoView({behavior:'smooth'});
+    
+  } else {
+    r.innerText="❌ Wrong! Loop continues... Hint: Orange, Car, Ignored";
+    r.style.color="red";
+    alert("Wrong answers! Hint: Check story.html");
+  }
+}
+</script>
