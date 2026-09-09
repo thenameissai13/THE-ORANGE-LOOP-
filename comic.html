@@ -13,11 +13,12 @@ nav a{text-decoration:none}
 .video-bg video{width:100%;height:100%;object-fit:cover}
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.92) 100%);z-index:-1}
 .content{position:relative;z-index:1}
-.card{max-width:800px;margin:30px auto;padding:24px;background:rgba(15,15,15,0.88);border-radius:20px;border:1px solid #2a2a2a;backdrop-filter:blur(12px)}
+.card{max-width:800px;margin:28px auto;padding:24px;background:rgba(15,15,15,0.88);border-radius:20px;border:1px solid #2a2a2a;backdrop-filter:blur(12px)}
 .bright{color:#ff6a00;text-shadow:0 0 12px rgba(255,106,0,0.6)}
 .input{width:100%;padding:13px;border-radius:10px;border:2px solid #333;background:#0f0f0f;color:white;margin:7px 0}
 .btn{padding:14px;background:#ff6a00;color:black;border-radius:30px;font-weight:900;border:none;width:100%;cursor:pointer;box-shadow:0 0 20px rgba(255,106,0,0.4)}
 .label{color:#ff6a00;font-weight:bold;font-size:11px;margin-top:12px;display:block;letter-spacing:1px}
+.locked{opacity:0.3;pointer-events:none;filter:blur(2px)}
 </style>
 </head>
 <body>
@@ -34,77 +35,96 @@ nav a{text-decoration:none}
 </nav>
 
 <h1 class="bright" style="text-align:center;margin:40px 0 5px;font-size:30px;letter-spacing:4px">THE COMIC BOOK</h1>
-<p style="text-align:center;opacity:0.7;font-size:11px;letter-spacing:3px">24 PAGES • BLACK & WHITE • ORANGE TRUTH</p>
+<p style="text-align:center;opacity:0.7;font-size:11px;letter-spacing:3px">BREAK THE LOOP TO BUY</p>
 
 <!-- PRIZE POOL -->
 <div class="card" style="border:2px solid #00ff88;background:rgba(0,30,15,0.9);text-align:center">
-<h2 style="color:#00ff88;text-shadow:0 0 12px #00ff88;margin:0;letter-spacing:3px">💰 PRIZE POOL ₹2,949</h2>
+<h2 style="color:#00ff88;margin:0;letter-spacing:3px">💰 PRIZE POOL ₹2,949</h2>
+<p style="color:#aaa;font-size:11px">Only paid loop-breakers shortlisted</p>
 <div style="display:flex;gap:10px;margin:18px 0">
 <div style="flex:1;background:#111;padding:12px;border-radius:12px"><p style="color:#ff6a00;font-weight:900;font-size:20px;margin:0">60</p><p style="font-size:10px;color:#666">FREE COMICS</p></div>
 <div style="flex:1;background:#111;padding:12px;border-radius:12px"><p style="color:#00ff88;font-weight:900;font-size:20px;margin:0">20</p><p style="font-size:10px;color:#666">POSTERS</p></div>
 <div style="flex:1;background:#111;padding:12px;border-radius:12px"><p style="color:white;font-weight:900;font-size:20px;margin:0">1</p><p style="font-size:10px;color:#666">CAMEO</p></div>
 </div>
-<p style="font-size:12px;text-align:left;background:black;padding:10px;border-radius:8px">🥇 3/3 Quiz = FREE comic (LOOP-FREE-XXXX)<br>🥈 Top 20 Waitlist = Poster + Credits<br>🥉 Grand = Cameo in Film</p>
-<div style="background:#222;height:8px;border-radius:10px;overflow:hidden;margin-top:10px"><div id="poolBar" style="width:15%;height:100%;background:linear-gradient(90deg,#ff6a00,#00ff88)"></div></div>
-<p id="poolText" style="color:#00ff88;font-size:11px;margin-top:6px">15% CLAIMED</p>
+<p style="font-size:11px;text-align:left;background:black;padding:10px;border-radius:8px;line-height:18px">🔒 Step 1: Pass Quiz (3/3)<br>💳 Step 2: Pay ₹29 to unlock full comic<br>🏆 Step 3: Auto shortlisted for pool</p>
 </div>
 
-<!-- PREVIEW -->
-<div class="card" style="border:2px solid #ff6a00">
-<h2 class="bright" style="text-align:center;margin-top:0">📖 2-PAGE SAMPLE</h2>
-<div style="background:#000;border-radius:12px;height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-direction:column;border:1px solid #222">
-<img src="IMG_20260910_023606.jpg" style="max-width:100%;max-height:100%;object-fit:contain" onerror="this.style.display='none'">
-<a href="sample.pdf" target="_blank" style="color:#ff6a00;margin-top:10px;font-size:13px">📄 Open sample.pdf (if uploaded)</a>
-<p style="color:#555;font-size:10px;margin-top:6px">Upload your 2-page PDF as sample.pdf to enable</p>
-</div>
-</div>
-
-<!-- WAITLIST -->
-<div class="card" style="border:2px solid #ff6a00;background:rgba(30,15,0,0.9)">
-<h2 class="bright" style="text-align:center;margin-top:0">🔥 JOIN WAITLIST</h2>
-<form action="https://formsubmit.co/thenameissai13@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="WAITLIST">
-<input type="hidden" name="_captcha" value="false">
-<label class="label">NAME *</label><input class="input" name="name" required>
-<label class="label">EMAIL *</label><input class="input" type="email" name="email" required>
-<label class="label">WHATSAPP *</label><input class="input" name="phone" required>
-<label class="label">SOURCE *</label><select class="input" name="source" required><option value="">Select</option><option>Instagram</option><option>YouTube</option><option>Friend</option><option>GitHub</option></select>
-<button class="btn" style="margin-top:12px">JOIN FOR ₹29 →</button>
-</form>
-</div>
-
-<!-- QUIZ -->
-<div class="card" style="border:2px dashed #ff6a00">
-<h2 class="bright" style="text-align:center;margin-top:0">🎁 WIN FREE COMIC - QUIZ</h2>
+<!-- STEP 1: QUIZ - ALWAYS VISIBLE -->
+<div id="quizCard" class="card" style="border:2px dashed #ff6a00">
+<h2 class="bright" style="text-align:center;margin-top:0">🔓 STEP 1 — BREAK THE LOOP</h2>
+<p style="text-align:center;color:#aaa;font-size:12px">Only 3/3 can unlock payment form</p>
 <div id="quiz">
-<label class="label">1. Loop color?</label><label><input type="radio" name="q1" value="orange"> Orange</label><br><label><input type="radio" name="q1" value="red"> Red</label>
-<label class="label">2. Man in?</label><label><input type="radio" name="q2" value="car"> Orange vintage car</label><br><label><input type="radio" name="q2" value="bike"> Bike</label>
-<label class="label">3. When asked time?</label><label><input type="radio" name="q3" value="ignore"> Ignored like I don't exist</label><br><label><input type="radio" name="q3" value="answer"> Answered</label>
-<button onclick="checkQuiz()" class="btn" style="margin-top:20px">SUBMIT</button>
+<label class="label">1. Loop color?</label><label style="display:block;margin:6px 0"><input type="radio" name="q1" value="orange"> Orange</label><label style="display:block;margin:6px 0;color:#666"><input type="radio" name="q1" value="red"> Red</label>
+<label class="label">2. Man in?</label><label style="display:block;margin:6px 0"><input type="radio" name="q2" value="car"> Orange vintage car</label><label style="display:block;margin:6px 0;color:#666"><input type="radio" name="q2" value="bike"> Bike</label>
+<label class="label">3. When asked time?</label><label style="display:block;margin:6px 0"><input type="radio" name="q3" value="ignore"> Ignored like I don't exist</label><label style="display:block;margin:6px 0;color:#666"><input type="radio" name="q3" value="answer"> Answered</label>
+<button onclick="checkQuiz()" class="btn" style="margin-top:20px">UNLOCK FORM →</button>
 <p id="result" style="text-align:center;font-weight:bold;margin-top:12px"></p>
 </div>
-<div id="winForm" style="display:none;text-align:center">
-<h3 style="color:#00ff88">🎉 YOU BROKE THE LOOP!</h3>
-<p id="prizeCode" style="color:#00ff88;font-size:28px;font-weight:900">LOOP-FREE-0000</p>
-<p style="font-size:13px">FREE COMIC + Poster</p>
-<form action="https://formsubmit.co/thenameissai13@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="WINNER">
+</div>
+
+<!-- STEP 2: PAYMENT FORM - LOCKED TILL QUIZ PASS -->
+<div id="payCard" class="card locked" style="border:2px solid #ff6a00;background:rgba(30,15,0,0.9)">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h2 class="bright" style="margin:0">💳 STEP 2 — PAY & SHORTLIST</h2>
+<span id="lockIcon" style="font-size:20px">🔒</span>
+</div>
+<p id="payDesc" style="color:#666;font-size:12px">Pass quiz to unlock payment</p>
+
+<div id="payContent" style="display:none">
+<div style="background:#111;border:1px dashed #00ff88;border-radius:12px;padding:14px;text-align:center;margin:12px 0">
+<p style="color:#777;font-size:10px;margin:0">YOUR LOOP CODE</p>
+<p id="prizeCode" style="color:#00ff88;font-size:26px;font-weight:900;margin:6px 0">LOOP-FREE-0000</p>
+<p style="color:#ff6a00;font-size:12px">Pay ₹29 to claim full comic + pool entry</p>
+</div>
+
+<form id="paidForm" action="https://formsubmit.co/thenameissai13@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="PAID SHORTLISTED - LOOP">
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" id="hiddenCode" name="prize_code">
-<input class="input" name="winner_name" placeholder="Name" required style="border-color:#00ff88">
-<input class="input" type="email" name="winner_email" placeholder="Email" required style="border-color:#00ff88">
-<button class="btn" style="background:#00ff88">CLAIM PRIZE</button>
+<input type="hidden" id="hiddenCode" name="loop_code">
+<input type="hidden" name="payment_status" value="PENDING_VERIFICATION">
+
+<label class="label">NAME *</label><input class="input" name="name" required>
+<label class="label">EMAIL (comic will be sent here) *</label><input class="input" type="email" name="email" required>
+<label class="label">WHATSAPP *</label><input class="input" name="phone" required>
+<label class="label">UPI TRANSACTION ID / SCREENSHOT REF *</label><input class="input" name="utr" placeholder="After payment, enter UTR no." required>
+
+<div style="background:black;border-radius:12px;padding:14px;margin:14px 0;border:1px solid #333">
+<p style="color:#ff6a00;font-weight:bold;font-size:12px;margin:0 0 8px">PAY ₹29 TO:</p>
+<!-- REPLACE WITH YOUR UPI -->
+<p style="color:white;font-size:14px;background:#222;padding:10px;border-radius:8px;letter-spacing:1px">UPI: yourname@okhdfcbank</p>
+<p style="color:#888;font-size:11px;margin:8px 0">Or click pay link:</p>
+<a id="payLink" href="https://razorpay.com/payment-link" target="_blank" style="display:block;background:#00ff88;color:black;padding:12px;border-radius:30px;text-align:center;font-weight:900;text-decoration:none">PAY ₹29 VIA RAZORPAY / UPI →</a>
+<p style="color:#666;font-size:10px;margin-top:8px">After payment, enter UTR above and submit. You will be shortlisted for pool within 24h.</p>
+</div>
+
+<button type="submit" class="btn">SUBMIT PAYMENT & GET SHORTLISTED →</button>
 </form>
 </div>
 </div>
 
-<div style="text-align:center;padding:30px;opacity:0.2;font-size:10px;letter-spacing:3px">© 2026 ORANGE LOOP PUNE</div>
+<!-- PREVIEW - ALSO LOCKED TILL QUIZ -->
+<div id="previewCard" class="card locked" style="border:1px solid #333">
+<h3 class="bright" style="text-align:center;margin-top:0;font-size:14px">📖 FULL PREVIEW UNLOCKS AFTER QUIZ</h3>
+<div style="background:#000;height:300px;display:flex;align-items:center;justify-content:center;border-radius:12px">
+<p style="color:#555">Pass quiz to see 2-page sample</p>
 </div>
+<div id="realPreview" style="display:none">
+<div style="background:#000;border-radius:12px;height:500px;overflow:hidden"><img src="IMG_20260910_023606.jpg" style="width:100%;height:100%;object-fit:contain"><iframe src="sample.pdf#toolbar=0" style="width:100%;height:100%;border:none;margin-top:10px"></iframe></div>
+</div>
+</div>
+
+<div style="text-align:center;padding:30px;opacity:0.2;font-size:10px">© 2026 ORANGE LOOP</div>
+</div>
+
 <script>
 var v=document.getElementById('bgVideo');function play(){v.play().catch(()=>{})}play();setInterval(play,800);
-document.addEventListener('click',play);document.addEventListener('touchstart',play);
-function checkQuiz(){let a1=document.querySelector('input[name="q1"]:checked'),a2=document.querySelector('input[name="q2"]:checked'),a3=document.querySelector('input[name="q3"]:checked'),r=document.getElementById('result');if(!a1||!a2||!a3){r.innerText="Answer all 3!";r.style.color="#ff6a00";return}if(a1.value=="orange"&&a2.value=="car"&&a3.value=="ignore"){let c="LOOP-FREE-"+Math.floor(1000+Math.random()*9000);document.getElementById('prizeCode').innerText=c;document.getElementById('hiddenCode').value=c;document.getElementById('quiz').style.display="none";document.getElementById('winForm').style.display="block"}else{r.innerText="Loop continues...";r.style.color="#ff6a00"}}
-let cl=10+Math.floor(Math.random()*8);document.getElementById('poolBar').style.width=cl+"%";document.getElementById('poolText').innerText=cl+"% CLAIMED • "+(60-cl)+" LEFT";
-</script>
-</body>
-</html>
+function checkQuiz(){
+let a1=document.querySelector('input[name="q1"]:checked'),a2=document.querySelector('input[name="q2"]:checked'),a3=document.querySelector('input[name="q3"]:checked'),r=document.getElementById('result');
+if(!a1||!a2||!a3){r.innerText="Answer all 3!";r.style.color="#ff6a00";return}
+if(a1.value=="orange"&&a2.value=="car"&&a3.value=="ignore"){
+let c="LOOP-"+Math.floor(1000+Math.random()*9000);
+document.getElementById('prizeCode').innerText=c;
+document.getElementById('hiddenCode').value=c;
+// UNLOCK
+document.getElementById('payCard').classList.remove('locked');
+document.getElementById('previewCard').classList.remove('locked');
