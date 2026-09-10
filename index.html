@@ -1,58 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE ORANGE LOOP - Film</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ORANGE LOOP</title>
 <style>
-body{margin:0;background:#0a0a0a;color:white;font-family:Arial,sans-serif;text-align:center}
-a{text-decoration:none}
-.hero{padding:80px 20px;background:#111}
-.hero h1{letter-spacing:6px;color:#ff6a00}
-.btn{padding:14px 28px;background:#ff6a00;color:black;border-radius:30px;font-weight:bold;display:inline-block;margin:10px}
-.card{max-width:700px;margin:30px auto;padding:20px;background:#151515;border-radius:16px;border:1px solid #333;text-align:center}
+body{margin:0;font-family:system-ui;background:black;color:white;}
+.hero{padding:80px 20px;text-align:center;background:linear-gradient(180deg,#111,#000);}
+.hero h1{color:#ff6a00;letter-spacing:4px;font-size:36px;}
+.btn{background:#ff6a00;color:black;padding:14px 28px;border:none;border-radius:8px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-block;margin-top:15px;}
+section{border-bottom:1px solid #222;}
+a{scroll-behavior:smooth;}
 </style>
 </head>
 <body>
 
-<nav style="position:sticky;top:0;z-index:999;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #222">
-<div style="font-weight:bold;letter-spacing:3px;color:#ff6a00">ORANGE LOOP</div>
-<div style="display:flex;gap:15px;font-size:13px;align-items:center">
-<a href="index.html" style="color:white;border-bottom:2px solid #ff6a00;padding-bottom:3px">FILM</a>
-<a href="story.html" style="color:#aaa">MY WORK</a>
-<a href="comic.html" style="color:#aaa">COMIC</a>
-<a href="comic.html#win" style="color:#ff6a00;border:1px solid #ff6a00;padding:4px 10px;border-radius:20px">WIN FREE 🎁</a>
+<!-- 3 DOTS MENU -->
+<div style="position:fixed;top:15px;right:15px;z-index:9999;">
+  <button id="dotBtn" style="background:black;color:white;border:1px solid #ff6a00;width:40px;height:40px;border-radius:50%;font-size:20px;font-weight:900;cursor:pointer;">⋮</button>
+  <div id="dotMenu" style="display:none;position:absolute;right:0;top:50px;background:white;color:black;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);width:220px;padding:8px 0;">
+    <a href="#trailer" style="display:block;padding:12px 18px;text-decoration:none;color:black;font-weight:600;border-bottom:1px solid #eee;">Trailer</a>
+    <a href="#characters" style="display:block;padding:12px 18px;text-decoration:none;color:black;font-weight:600;border-bottom:1px solid #eee;">Characters</a>
+    <a href="#places" style="display:block;padding:12px 18px;text-decoration:none;color:black;font-weight:600;border-bottom:1px solid #eee;">Places</a>
+    <a href="#ghost" style="display:block;padding:12px 18px;text-decoration:none;color:black;font-weight:600;border-bottom:1px solid #eee;">The Ghost</a>
+    <a href="#timeloop" style="display:block;padding:12px 18px;text-decoration:none;color:black;font-weight:600;border-bottom:1px solid #eee;">Time Loop</a>
+    <a href="#sequel" style="display:block;padding:12px 18px;text-decoration:none;color:black;font-weight:600;border-bottom:1px solid #eee;">Sequel</a>
+    <a href="#win" style="display:block;padding:12px 18px;text-decoration:none;color:#ff6a00;font-weight:800;">Prize Pool</a>
+  </div>
 </div>
-</nav>
 
 <div class="hero">
 <h1>THE ORANGE LOOP</h1>
-<p style="opacity:0.6">A mind-bending short film by Sai</p>
-<div style="max-width:700px;margin:30px auto">
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid #333">
-<iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/rfX_Ivgr7fQ" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-<a class="btn" href="story.html">HOW IT WAS BUILT →</a>
-<a class="btn" href="comic.html" style="background:transparent;border:1px solid #ff6a00;color:#ff6a00">READ COMIC</a>
+<p style="opacity:0.7;">2:17 AM. The train always comes.</p>
+<a class="btn" href="#buy">BUY COMIC - RS.29</a>
 </div>
 
-<!-- COMIC PREVIEW - SIMPLE ATTACHMENT -->
-<div class="card" style="border:2px solid #ff6a00;max-width:800px">
-<h2 style="color:#ff6a00;letter-spacing:3px;margin:0">COMIC PREVIEW</h2>
-<p style="color:#888;font-size:11px;letter-spacing:2px;margin-top:6px">2-PAGE SAMPLE • FULL COMIC = 20 PAGES</p>
+<!-- YT TRAILER - ADDED -->
+<section id="trailer" style="padding:60px 20px;background:#000;text-align:center;">
+<h2 style="color:#ff6a00;letter-spacing:3px;">TRAILER</h2>
+<div style="margin-top:25px;max-width:720px;margin-left:auto;margin-right:auto;">
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid #333;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+src="https://www.youtube.com/embed/rfX_Ivgr7fQ" 
+title="THE ORANGE LOOP Trailer"
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen>
+</iframe>
+</div>
+<p style="opacity:0.5;margin-top:12px;font-size:13px;">Official Trailer</p>
+</div>
+</section>
 
-<div style="margin-top:18px;padding:16px;background:#000;border-radius:12px;border:1px dashed #333;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left">
-<div>
-<p style="margin:0;font-weight:bold">📄 Orange_Loop_Sample.pdf</p>
-<p style="margin:4px 0 0;color:#666;font-size:11px">Free preview • 2 pages</p>
-</div>
-<a href="sample.pdf" download style="padding:10px 20px;background:white;color:black;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px">DOWNLOAD ↓</a>
-</div>
+<!-- CHARACTERS -->
+<section id="characters" style="padding:60px 20px;background:#0a0a0a;">
+<h2 style="color:#ff6a00;letter-spacing:3px;">CHARACTERS</h2>
+<p><b>Aisha</b> — Billionaire's daughter, protagonist. Both victim and observer of her own loop.</p>
+<p><b>The Man in Orange Car</b> — Vintage roofless orange car. Appears at 45 seconds. His message: No Mercy.</p>
+<p><b>The Train</b> — The executioner and the reset button.</p>
+</section>
 
-<a href="comic.html" style="display:inline-block;margin-top:16px;padding:14px 28px;background:#ff6a00;color:black;border-radius:30px;font-weight:900;text-decoration:none">Know more →</a>
-<p style="color:#555;font-size:10px;margin-top:8px">UPI: 7620604930-s363@ybl</p>
-</div>
+<!-- PLACES -->
+<section id="places" style="padding:60px 20px;background:#fff;color:#111;">
+<h2 style="color:#ff6a00;letter-spacing:3px;">PLACES</h2>
+<p><b>Penthouse Party</b> — Where the incident begins.</p>
+<p><b>Backroad / Railway Crossing</b> — Cracked asphalt. Car lodged between rails. 2:17 AM.</p>
+<p><b>The Loop Field</b> — Where Aisha watches herself die.</p>
+</section>
+
+<!-- THE GHOST -->
+<section id="ghost" style="padding:60px 20px;background:#0a0a0a;">
+<h2 style="color:#ff6a00;letter-spacing:3px;">THE GHOST</h2>
+<p>There is no traditional ghost. The Orange Car is the ghost. Untouched by rain, untouched by time. When struck, he collapses into dust, leaving only a silver key.</p>
+<p style="opacity:0.7;">"The train isn't driven by me. The car was not mine. I am no living being."</p>
+</section>
+
+<!-- TIME LOOP -->
+<section id="timeloop" style="padding:60px 20px;background:#f7f7f7;color:#111;">
+<h2 style="color:#ff6a00;letter-spacing:3px;">TIME LOOP</h2>
+<p><b>Duration:</b> 2 minutes. 2:17:00 to impact.</p>
+<p><b>0:45s</b> — Orange car appears<br><b>1:30s</b> — Train light visible<br><b>2:00s</b> — Impact. Reset.</p>
+<p><b>How it breaks:</b> She parks the ghost car on the tracks. The train destroys the prison, not the prisoner.</p>
+</section>
+
+<!-- SEQUEL -->
+<section id="sequel" style="padding:60px 20px;background:#111;border-top:3px solid #ff6a00;">
+<h2 style="letter-spacing:3px;">SEQUEL</h2>
+<p style="color:#ff6a00;font-weight:700;">PART 2: THE AWAKENING</p>
+<p>Aisha wakes up in a ditch. Real pain. Real wreckage. Did she break the loop, or did the loop break her?</p>
+<p style="opacity:0.5;">Unlocks after 500 sales.</p>
+</section>
+
+<!-- PRIZE POOL -->
+<section id="win" style="padding:60px 20px;background:#ff6a00;color:black;text-align:center;">
+<h2 style="letter-spacing:3px;">PRIZE POOL</h2>
+<p style="font-size:28px;font-weight:900;">Rs.2949</p>
+<p>Every 10th buyer gets free comic. Pool grows with every sale.</p>
+</section>
+
+<!-- BUY -->
+<section id="buy" style="padding:60px 20px;text-align:center;">
+<h2>GET THE FULL COMIC</h2>
+<p>Part 1: The Incident to The Awakening - 12 Chapters</p>
+<a class="btn" href="YOUR_RAZORPAY_LINK">BUY NOW - RS.29</a>
+</section>
+
+<script>
+const btn=document.getElementById('dotBtn');const menu=document.getElementById('dotMenu');
+btn.onclick=()=>{menu.style.display=menu.style.display==='none'?'block':'none';}
+document.addEventListener('click',(e)=>{if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.style.display='none';}});
+</script>
 
 </body>
 </html>
